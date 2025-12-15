@@ -1,0 +1,120 @@
+@import './variables.css';
+
+/* Mobile-first Create Food form */
+.create-food-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 18px;
+  background: var(--bg);
+}
+
+.create-food-card {
+  width: 100%;
+  max-width: 720px;
+  background: var(--card);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+}
+
+.cf-title {
+  margin: 4px 0 12px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+}
+
+.cf-label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.cf-input,
+.cf-textarea,
+.cf-file {
+  width: 100%;
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.96rem;
+  box-sizing: border-box;
+}
+
+.cf-textarea { resize: vertical; min-height: 84px }
+
+.cf-file { padding: 8px 6px }
+
+.cf-preview {
+  margin-top: 12px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f1f6f9 0%, #eaf3f6 100%);
+  border: 1px dashed var(--border);
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cf-placeholder {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 12px;
+}
+
+.cf-preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cf-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.cf-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.cf-btn.primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.cf-btn.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* Larger layouts */
+@media (min-width: 720px) {
+  .create-food-card { padding: 20px }
+  .cf-title { font-size: 1.2rem }
+  .cf-preview { min-height: 220px }
+}
+
+@media (min-width: 1000px) {
+  .create-food-card { display: grid; grid-template-columns: 1fr 360px; gap: 18px }
+  .cf-preview { grid-column: 2 / 3; grid-row: 1 / span 3; min-height: 360px }
+  .cf-actions { grid-column: 1 / 2 }
+}
